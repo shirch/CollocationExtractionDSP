@@ -149,11 +149,5 @@ job.setGroupingComparatorClass(NPMICompare.class);
 
 #### reduce:
 -------------------------
-Reuce is used in order to print to a file the final output collocations.
+Reduce is used in order to print to a file the final output collocations.
 
-
- 
-### Authors
-
-* **Shir Chen** - *203869698* 
-* **Adir Ben Azarya** - *203904610* 

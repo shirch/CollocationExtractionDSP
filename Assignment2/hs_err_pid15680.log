@@ -1,0 +1,233 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6d816f0d, pid=15680, tid=12644
+#
+# JRE version: 6.0_31-b05
+# Java VM: Java HotSpot(TM) Client VM (20.6-b01 mixed mode windows-x86 )
+# Problematic frame:
+# V  [jvm.dll+0x26f0d]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x02897800):  JavaThread "main" [_thread_in_vm, id=12644, stack(0x00580000,0x005d0000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x4420048c
+
+Registers:
+EAX=0x44200448, EBX=0x1a282328, ECX=0x1a0f99c0, EDX=0x15135fd0
+ESP=0x005cf298, EBP=0x005cf318, ESI=0x1a0f8fd0, EDI=0x02897800
+EIP=0x6d816f0d, EFLAGS=0x00010206
+
+Top of Stack: (sp=0x005cf298)
+0x005cf298:   1a0f9990 02897800 1a0f9970 00000000
+0x005cf2a8:   00000000 4528654d 00000000 6d8f0401
+0x005cf2b8:   0000000c 02898e30 02898d70 02898e00
+0x005cf2c8:   02898994 028989b0 00000000 00000003
+0x005cf2d8:   005cf2f0 6d8109cf 1a0f9990 02897800
+0x005cf2e8:   005cf300 0000000c 0000019d 1a0f8fd0
+0x005cf2f8:   1a0f9970 02894ef0 1a282328 1a2828c0
+0x005cf308:   1a28a31c 1a0f9998 1a0f99b0 1a0f99a8 
+
+Instructions: (pc=0x6d816f0d)
+0x6d816eed:   10 e8 0d c5 fd ff 8b 45 0c 85 c0 75 04 33 d2 eb
+0x6d816efd:   02 8b 10 8b 4d 10 85 c9 75 04 33 c0 eb 02 8b 01
+0x6d816f0d:   3b 50 44 0f 85 68 ff ff ff 8b 75 08 89 0e e9 67
+0x6d816f1d:   ff ff ff 55 8b ec 83 ec 10 a0 85 fa a6 6d 84 c0 
+
+
+Register to memory mapping:
+
+EAX=0x44200448 is an unknown value
+EBX=0x1a282328 is an unknown value
+ECX=0x1a0f99c0 is an unknown value
+EDX=0x15135fd0 is an oop
+{symbol} 
+ - klass: {other class}
+ESP=0x005cf298 is pointing into the stack for thread: 0x02897800
+EBP=0x005cf318 is pointing into the stack for thread: 0x02897800
+ESI=0x1a0f8fd0 is an unknown value
+EDI=0x02897800 is a thread
+
+
+Stack: [0x00580000,0x005d0000],  sp=0x005cf298,  free space=316k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x26f0d]
+V  [jvm.dll+0x27506]
+V  [jvm.dll+0x278b5]
+V  [jvm.dll+0x278fb]
+V  [jvm.dll+0x281dc]
+V  [jvm.dll+0x214f1]
+V  [jvm.dll+0x2988c]
+V  [jvm.dll+0x2b3fd]
+V  [jvm.dll+0x2d87a]
+V  [jvm.dll+0x2d9bc]
+V  [jvm.dll+0x77012]
+V  [jvm.dll+0x7be68]
+V  [jvm.dll+0x7eca7]
+V  [jvm.dll+0x7f066]
+V  [jvm.dll+0x487da]
+j  com.amazonaws.http.apache.client.impl.ApacheConnectionManagerFactory.getPreferredSocketFactory(Lcom/amazonaws/http/settings/HttpClientSettings;)Lorg/apache/http/conn/socket/ConnectionSocketFactory;+16
+j  com.amazonaws.http.apache.client.impl.ApacheConnectionManagerFactory.create(Lcom/amazonaws/http/settings/HttpClientSettings;)Lorg/apache/http/conn/HttpClientConnectionManager;+2
+j  com.amazonaws.http.apache.client.impl.ApacheConnectionManagerFactory.create(Lcom/amazonaws/http/settings/HttpClientSettings;)Ljava/lang/Object;+2
+j  com.amazonaws.http.apache.client.impl.ApacheHttpClientFactory.create(Lcom/amazonaws/http/settings/HttpClientSettings;)Lcom/amazonaws/http/apache/client/impl/ConnectionManagerAwareHttpClient;+9
+j  com.amazonaws.http.apache.client.impl.ApacheHttpClientFactory.create(Lcom/amazonaws/http/settings/HttpClientSettings;)Ljava/lang/Object;+2
+j  com.amazonaws.http.AmazonHttpClient.<init>(Lcom/amazonaws/ClientConfiguration;Lcom/amazonaws/retry/v2/RetryPolicy;Lcom/amazonaws/metrics/RequestMetricCollector;ZZ)V+23
+j  com.amazonaws.http.AmazonHttpClient.<init>(Lcom/amazonaws/ClientConfiguration;Lcom/amazonaws/metrics/RequestMetricCollector;ZZ)V+7
+j  com.amazonaws.AmazonWebServiceClient.<init>(Lcom/amazonaws/client/AwsSyncClientParams;Ljava/lang/Boolean;)V+84
+j  com.amazonaws.AmazonWebServiceClient.<init>(Lcom/amazonaws/client/AwsSyncClientParams;)V+3
+j  com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduceClient.<init>(Lcom/amazonaws/client/AwsSyncClientParams;Z)V+2
+j  com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduceClient.<init>(Lcom/amazonaws/client/AwsSyncClientParams;)V+3
+j  com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduceClientBuilder.build(Lcom/amazonaws/client/AwsSyncClientParams;)Lcom/amazonaws/services/elasticmapreduce/AmazonElasticMapReduce;+5
+j  com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduceClientBuilder.build(Lcom/amazonaws/client/AwsSyncClientParams;)Ljava/lang/Object;+2
+j  com.amazonaws.client.builder.AwsSyncClientBuilder.build()Ljava/lang/Object;+6
+j  com.amazonaws.samples.Local.<clinit>()V+3
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xfac3b]
+V  [jvm.dll+0x18c3a1]
+V  [jvm.dll+0xfacbd]
+V  [jvm.dll+0x7ddf7]
+V  [jvm.dll+0x7ec5e]
+V  [jvm.dll+0x7ef49]
+V  [jvm.dll+0x7f066]
+V  [jvm.dll+0xb2999]
+V  [jvm.dll+0x94b18]
+C  [javaw.exe+0x18c1]
+C  [javaw.exe+0x2033]
+C  [javaw.exe+0x8614]
+C  [KERNEL32.DLL+0x18494]  BaseThreadInitThunk+0x24
+C  [ntdll.dll+0x641c8]  RtlAreBitsSet+0x88
+C  [ntdll.dll+0x64198]  RtlAreBitsSet+0x58
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.amazonaws.http.apache.client.impl.ApacheConnectionManagerFactory.getPreferredSocketFactory(Lcom/amazonaws/http/settings/HttpClientSettings;)Lorg/apache/http/conn/socket/ConnectionSocketFactory;+16
+j  com.amazonaws.http.apache.client.impl.ApacheConnectionManagerFactory.create(Lcom/amazonaws/http/settings/HttpClientSettings;)Lorg/apache/http/conn/HttpClientConnectionManager;+2
+j  com.amazonaws.http.apache.client.impl.ApacheConnectionManagerFactory.create(Lcom/amazonaws/http/settings/HttpClientSettings;)Ljava/lang/Object;+2
+j  com.amazonaws.http.apache.client.impl.ApacheHttpClientFactory.create(Lcom/amazonaws/http/settings/HttpClientSettings;)Lcom/amazonaws/http/apache/client/impl/ConnectionManagerAwareHttpClient;+9
+j  com.amazonaws.http.apache.client.impl.ApacheHttpClientFactory.create(Lcom/amazonaws/http/settings/HttpClientSettings;)Ljava/lang/Object;+2
+j  com.amazonaws.http.AmazonHttpClient.<init>(Lcom/amazonaws/ClientConfiguration;Lcom/amazonaws/retry/v2/RetryPolicy;Lcom/amazonaws/metrics/RequestMetricCollector;ZZ)V+23
+j  com.amazonaws.http.AmazonHttpClient.<init>(Lcom/amazonaws/ClientConfiguration;Lcom/amazonaws/metrics/RequestMetricCollector;ZZ)V+7
+j  com.amazonaws.AmazonWebServiceClient.<init>(Lcom/amazonaws/client/AwsSyncClientParams;Ljava/lang/Boolean;)V+84
+j  com.amazonaws.AmazonWebServiceClient.<init>(Lcom/amazonaws/client/AwsSyncClientParams;)V+3
+j  com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduceClient.<init>(Lcom/amazonaws/client/AwsSyncClientParams;Z)V+2
+j  com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduceClient.<init>(Lcom/amazonaws/client/AwsSyncClientParams;)V+3
+j  com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduceClientBuilder.build(Lcom/amazonaws/client/AwsSyncClientParams;)Lcom/amazonaws/services/elasticmapreduce/AmazonElasticMapReduce;+5
+j  com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduceClientBuilder.build(Lcom/amazonaws/client/AwsSyncClientParams;)Ljava/lang/Object;+2
+j  com.amazonaws.client.builder.AwsSyncClientBuilder.build()Ljava/lang/Object;+6
+j  com.amazonaws.samples.Local.<clinit>()V+3
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x1a00e400 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=16340, stack(0x1ab80000,0x1abd0000)]
+  0x19dd1400 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=14828, stack(0x1aaf0000,0x1ab40000)]
+  0x02278c00 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=15968, stack(0x18c90000,0x18ce0000)]
+  0x02273000 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=14316, stack(0x18c00000,0x18c50000)]
+  0x02270400 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_blocked, id=14932, stack(0x18b70000,0x18bc0000)]
+  0x0225c400 JavaThread "Attach Listener" daemon [_thread_blocked, id=12320, stack(0x18ae0000,0x18b30000)]
+  0x0225a400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=14268, stack(0x18a50000,0x18aa0000)]
+  0x02226800 JavaThread "Finalizer" daemon [_thread_blocked, id=3144, stack(0x189c0000,0x18a10000)]
+  0x02225000 JavaThread "Reference Handler" daemon [_thread_blocked, id=12812, stack(0x18930000,0x18980000)]
+=>0x02897800 JavaThread "main" [_thread_in_vm, id=12644, stack(0x00580000,0x005d0000)]
+
+Other Threads:
+  0x02221800 VMThread [stack: 0x188a0000,0x188f0000] [id=2644]
+  0x1a010800 WatcherThread [stack: 0x1ac10000,0x1ac60000] [id=5728]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 4928K, used 4290K [0x048a0000, 0x04df0000, 0x09df0000)
+  eden space 4416K,  91% used [0x048a0000, 0x04c97880, 0x04cf0000)
+  from space 512K,  44% used [0x04cf0000, 0x04d29030, 0x04d70000)
+  to   space 512K,   0% used [0x04d70000, 0x04d70000, 0x04df0000)
+ tenured generation   total 10944K, used 1666K [0x09df0000, 0x0a8a0000, 0x148a0000)
+   the space 10944K,  15% used [0x09df0000, 0x09f90a70, 0x09f90c00, 0x0a8a0000)
+ compacting perm gen  total 12288K, used 8838K [0x148a0000, 0x154a0000, 0x188a0000)
+   the space 12288K,  71% used [0x148a0000, 0x15141a50, 0x15141c00, 0x154a0000)
+No shared spaces configured.
+
+Code Cache  [0x028a0000, 0x029c0000, 0x048a0000)
+ total_blobs=391 nmethods=260 adapters=75 free_code_cache=32405568 largest_free_block=11712
+
+Dynamic libraries:
+0x00400000 - 0x00425000 	C:\Program Files (x86)\Java\jre6\bin\javaw.exe
+0x77450000 - 0x775e0000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x74a40000 - 0x74b20000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x6f3e0000 - 0x6f3f0000 	C:\Program Files\AVAST Software\Avast\x86\aswhook.dll
+0x76e20000 - 0x77004000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x73df0000 - 0x73e68000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x74b20000 - 0x74bdf000 	C:\WINDOWS\System32\msvcrt.dll
+0x74be0000 - 0x74c24000 	C:\WINDOWS\System32\sechost.dll
+0x73ee0000 - 0x73fa0000 	C:\WINDOWS\System32\RPCRT4.dll
+0x73d10000 - 0x73d30000 	C:\WINDOWS\System32\SspiCli.dll
+0x73d00000 - 0x73d0a000 	C:\WINDOWS\System32\CRYPTBASE.dll
+0x74c30000 - 0x74c87000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x73fa0000 - 0x7412d000 	C:\WINDOWS\System32\USER32.dll
+0x74290000 - 0x742a7000 	C:\WINDOWS\System32\win32u.dll
+0x73dc0000 - 0x73de2000 	C:\WINDOWS\System32\GDI32.dll
+0x75020000 - 0x75184000 	C:\WINDOWS\System32\gdi32full.dll
+0x75370000 - 0x753ed000 	C:\WINDOWS\System32\msvcp_win.dll
+0x748c0000 - 0x749dd000 	C:\WINDOWS\System32\ucrtbase.dll
+0x74890000 - 0x748b6000 	C:\WINDOWS\System32\IMM32.DLL
+0x7c340000 - 0x7c396000 	C:\Program Files (x86)\Java\jre6\bin\msvcr71.dll
+0x6d7f0000 - 0x6da9f000 	C:\Program Files (x86)\Java\jre6\bin\client\jvm.dll
+0x73160000 - 0x73184000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x72ad0000 - 0x72af3000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x77320000 - 0x77359000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x6d7a0000 - 0x6d7ac000 	C:\Program Files (x86)\Java\jre6\bin\verify.dll
+0x6d320000 - 0x6d33f000 	C:\Program Files (x86)\Java\jre6\bin\java.dll
+0x6d370000 - 0x6d399000 	C:\Program Files (x86)\Java\jre6\bin\jdwp.dll
+0x6d690000 - 0x6d696000 	C:\Program Files (x86)\Java\jre6\bin\npt.dll
+0x6d2c0000 - 0x6d2da000 	C:\Program Files (x86)\Java\jre6\bin\instrument.dll
+0x6d7e0000 - 0x6d7ef000 	C:\Program Files (x86)\Java\jre6\bin\zip.dll
+0x6d200000 - 0x6d207000 	C:\Program Files (x86)\Java\jre6\bin\dt_socket.dll
+0x73d50000 - 0x73db7000 	C:\WINDOWS\System32\WS2_32.dll
+0x6f330000 - 0x6f341000 	C:\WINDOWS\system32\napinsp.dll
+0x6f310000 - 0x6f326000 	C:\WINDOWS\system32\pnrpnsp.dll
+0x6f2f0000 - 0x6f303000 	C:\WINDOWS\system32\NLAapi.dll
+0x73440000 - 0x73496000 	C:\WINDOWS\System32\mswsock.dll
+0x72a40000 - 0x72ace000 	C:\WINDOWS\SYSTEM32\DNSAPI.dll
+0x73d40000 - 0x73d47000 	C:\WINDOWS\System32\NSI.dll
+0x72f70000 - 0x72fa0000 	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+0x6f2e0000 - 0x6f2ec000 	C:\WINDOWS\System32\winrnr.dll
+0x6f2c0000 - 0x6f2d1000 	C:\WINDOWS\System32\wshbth.dll
+0x6f350000 - 0x6f39f000 	C:\WINDOWS\System32\fwpuclnt.dll
+0x72430000 - 0x72449000 	C:\WINDOWS\SYSTEM32\bcrypt.dll
+0x6f3a0000 - 0x6f3a8000 	C:\Windows\System32\rasadhlp.dll
+0x73e70000 - 0x73e76000 	C:\WINDOWS\System32\PSAPI.DLL
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:56958 -Djava.library.path=H:\hadoop-2.6.2\lib\native -javaagent:C:\Users\Adir\java-2018-12\eclipse\configuration\org.eclipse.osgi\221\0\.cp\lib\javaagent-shaded.jar -Dfile.encoding=Cp1252 
+java_command: com.amazonaws.samples.Local
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\java\jdk1.8.0_151
+PATH=C:/java/jre/bin/server;C:/java/jre/bin;C:/java/jre/lib/amd64;C:\Program Files\Broadcom\Broadcom 802.11 Network Adapter;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\CMake\bin;C:\Users\Adir\Downloads\platform-tools;C:\Users\Adir\java-2018-12\eclipse;C:\Program Files\Amazon\AWSCLI\bin\;C:\Program Files\Amazon\AWSSAMCLI\bin\;C:\java\jdk1.8.0_151\bin;C:\apache-maven-3.2.5\apache-maven\src\bin;C:\Program Files\erl10.4\bin;H:\hadoop-2.6.2\bin;H:\hadoop-2.6.2\sbin;H:\hadoop-2.6.2\share\hadoop\common\*;H:\hadoop-2.6.2\share\hadoop\hdfs;H:\hadoop-2.6.2\share\hadoop\hdfs\lib\*;H:\hadoop-2.6.2\share\hadoop\hdfs\*;H:\hadoop-2.6.2\share\hadoop\yarn\lib\*;H:\hadoop-2.6.2\share\hadoop\yarn\*;H:\hadoop-2.6.2\share\hadoop\mapreduce\lib\*;H:\hadoop-2.6.2\share\hadoop\mapreduce\*;H:\hadoop-2.6.2\share\hadoop\common\lib\*;C:\Users\Adir\AppData\Local\Programs\Python\Python36\Scripts\;C:\Users\Adir\AppData\Local\Programs\Python\Python36\;C:\Users\Adir\AppData\Local\Microsoft\WindowsApps;C:\Modeltech_pe_edu_10.4a\win32pe_edu;C:\Users\Adir\Downloads\platform-tools;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.1\bin;;C:\Program Files\erl10.4;;C:\Users\Adir\Desktop\Apps;
+USERNAME=Adir
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 78 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows NT 6.2 Build 9200 
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 78 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 8223592k(2536876k free), swap 19233640k(11214328k free)
+
+vm_info: Java HotSpot(TM) Client VM (20.6-b01) for windows-x86 JRE (1.6.0_31-b05), built on Feb  3 2012 18:44:09 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Tue Jul 23 13:39:25 2019
+elapsed time: 458 seconds
+
